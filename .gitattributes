@@ -1,2 +1,32 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Clase4Ej1a {
+	public static void main(String[] args) {
+		Scanner teclado= new Scanner(System.in);
+		int tam,aux;
+		System.out.println("ingrese el tamaño del arreglo: ");
+		tam=teclado.nextInt();
+		int numeros[]=new int[tam];//declaramos el arreglo del tamaño indicado
+		for(int i=0;i<tam;i++) {
+		System.out.println("ingrese los valores del arreglo: ");
+			numeros[i]=teclado.nextInt();
+		}
+		//METODO BURBUJA
+			for(int i=0;i<(tam-1);i++) {
+				for(int j=0;j<(tam-1);j++) {
+					if(numeros[j]>numeros[j+1]) {
+						aux=numeros[j];
+						numeros[j]=numeros[j+1];
+						numeros[j+1]=aux;
+					}
+				}
+			}
+	System.out.println("\nArreglo ordenado de forma ascendente: ");
+	for(int i=0;i<tam;i++) {
+		System.out.println(numeros[i]+ " ");
+		
+	}
+	}
+}
