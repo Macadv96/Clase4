@@ -13,7 +13,7 @@ public class Clase4Ej1a {
 		System.out.println("ingrese los valores del arreglo: ");
 			numeros[i]=teclado.nextInt();
 		}
-		//METODO BURBUJA
+		
 			for(int i=0;i<(tam-1);i++) {
 				for(int j=0;j<(tam-1);j++) {
 					if(numeros[j]>numeros[j+1]) {
@@ -30,3 +30,24 @@ public class Clase4Ej1a {
 	}
 	}
 }
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class Ejercicio2Clase4 {
+	public static int sumar(String ruta) throws IOException{
+		int suma=0;
+		for(String linea:Files.readAllLines(Paths.get(ruta))) {
+			int lineaNumero= Integer.parseInt(linea);
+			suma+= lineaNumero;
+		}
+		return suma;
+		}
+	 public static void main(String[] args) throws IOException{
+		 int suma= Ejercicio2Clase4.sumar("C:\\Users\\Juli\\OneDrive\\Escritorio\\Curso Desarrolador Java Inicial\\archivonumeros\\sumaclase4.txt");
+	 System.out.println(suma);
+		 }
+	
+
+	}
